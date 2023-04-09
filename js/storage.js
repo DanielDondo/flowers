@@ -3,6 +3,9 @@
    function setLanguage(lang) {
       // Зберігаємо вибір користувача в localStorage
       localStorage.setItem('lang', lang);
+      // Змінюємо мову HTML сторінки відповідно до вибраної мови
+      var html = document.getElementsByTagName('html')[0];
+      html.setAttribute('lang', lang);
       // Змінюємо текст елемента з id='greeting' відповідно до вибраної мови
       //===============================================================================================================
       var greeting = document.getElementById('99');
@@ -1391,9 +1394,17 @@
          greeting.innerText = '+919191919191 - Леся';
       }
       //===============================================================================================================
+      var greeting = document.getElementById('170');
+      if (lang === 'en') {
+         greeting.innerText = 'Our warehouses';
+      } else if (lang === 'pl') {
+         greeting.innerText = 'Nasze magazyny';
+      } else {
+         greeting.innerText = 'Наші склади';
+      }
    }
    // Отримуємо поточну мову з localStorage, якщо вона зберіглася раніше
-   var currentLang = localStorage.getItem('lang') || 'ua';
+   var currentLang = localStorage.getItem('lang') || 'uk';
    // Встановлюємо поточну мову
    setLanguage(currentLang);
    // Додаємо обробник кліку на кожну кнопку
@@ -1404,7 +1415,7 @@
       setLanguage('pl');
    });
    document.getElementById('ua-btn').addEventListener('click', function () {
-      setLanguage('ua');
+      setLanguage('uk');
    });
 })();
 //========================   Таби   =============================================================================

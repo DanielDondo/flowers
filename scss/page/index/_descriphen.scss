@@ -1,11 +1,7 @@
 .descriphen {
    @extend %padding;
 
-   background-attachment: scroll;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-
+   @extend %bg;
    //===============================================================================================================
    background-image: url(../img/home/home__descriphen/descriphen-bg.png);
    @media screen and (min-device-pixel-ratio: 2),

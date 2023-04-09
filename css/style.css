@@ -118,6 +118,14 @@ h6 {
   padding: 0 0.9375rem;
 }
 
+html,
+body {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 @media (min-width: 95.625em) {
   .teams, .communication, .contacts-hero, .description-broker, .hero-broker, .tabs, .hero-storage, .contacts, .tariffs, .delivery, .additional, .descriphen {
     padding-top: 7.5rem;
@@ -165,6 +173,13 @@ h6 {
   .teams, .communication, .contacts-hero, .description-broker, .hero-broker, .tabs, .hero-storage, .contacts, .tariffs, .delivery, .additional, .descriphen {
     padding-bottom: 3.75rem;
   }
+}
+
+.hero-error, .teams, .communication, .contacts-hero, .description-broker, .hero-broker, .tariffs, .descriphen {
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .box-titles__suptitle {
@@ -1677,6 +1692,14 @@ body.lock {
     -webkit-box-shadow: 0 -1px 0 #227ce4;
             box-shadow: 0 -1px 0 #227ce4;
   }
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: rgba(31, 42, 54, 0.7);
 }
 .header__container {
   display: grid;
@@ -3364,7 +3387,7 @@ body.lock {
     opacity: 1;
   }
 }
-.tabs-hero__button.active {
+.tabs-hero__button.open {
   color: #ffffff;
   opacity: 1;
 }
@@ -3407,15 +3430,15 @@ body.lock {
   width: 100%;
   visibility: hidden;
 }
-.tabs-hero__item.active {
+.tabs-hero__item.open {
   visibility: visible;
 }
-.tabs-hero__item.active .item-tabs-hero__decor {
+.tabs-hero__item.open .item-tabs-hero__decor {
   -webkit-transform: translate(0%);
           transform: translate(0%);
 }
 @media screen and (max-width: 47.99875em) {
-  .tabs-hero__item.active .item-tabs-hero__decor {
+  .tabs-hero__item.open .item-tabs-hero__decor {
     -webkit-transform: scale(1);
             transform: scale(1);
     opacity: 1;
@@ -3547,10 +3570,6 @@ body.lock {
 }
 
 .descriphen {
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   background-image: url(../img/home/home__descriphen/descriphen-bg.png);
 }
 @media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
@@ -8352,10 +8371,6 @@ body.lock {
 
 .tariffs {
   background-image: url(../../../img/home/home__tariffs/tariffs-bg.png);
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 @media (min-width: 95.625em) {
   .tariffs__titles:not(:last-child) {
@@ -10045,15 +10060,11 @@ body.lock {
 }
 
 .hero-broker {
-  background-image: url(../img/broker/broker-bg.png);
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-image: url(../img/broker/broker-bg.webp);
 }
 @media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
   .hero-broker {
-    background-image: url("../img/broker/broker-bg@2x.png");
+    background-image: url("../img/broker/broker-bg@2x.webp");
   }
 }
 .hero-broker__container {
@@ -10175,15 +10186,11 @@ body.lock {
 }
 
 .description-broker {
-  background-image: url(../img/broker/broker-bg-1.png);
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-image: url(../img/broker/broker-bg-1.webp);
 }
 @media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
   .description-broker {
-    background-image: url("../img/broker/broker-bg-1@2x.png");
+    background-image: url("../img/broker/broker-bg-1@2x.webp");
   }
 }
 .description-broker__container {
@@ -10229,26 +10236,26 @@ body.lock {
 }
 @media (min-width: 95.625em) {
   .description-broker__title:not(:last-child) {
-    margin-bottom: 3.4375rem;
+    margin-bottom: 4.375rem;
   }
 }
 @media (min-width: 20em) and (max-width: 95.625em) {
-  @supports (margin-bottom: clamp( 2.5rem , 2.2520661157rem  +  1.2396694215vw , 3.4375rem )) {
+  @supports (margin-bottom: clamp( 2.8125rem , 2.3992768595rem  +  2.0661157025vw , 4.375rem )) {
     .description-broker__title:not(:last-child) {
-      margin-bottom: clamp( 2.5rem , 2.2520661157rem  +  1.2396694215vw , 3.4375rem );
+      margin-bottom: clamp( 2.8125rem , 2.3992768595rem  +  2.0661157025vw , 4.375rem );
     }
   }
-  @supports not (margin-bottom: clamp( 2.5rem , 2.2520661157rem  +  1.2396694215vw , 3.4375rem )) {
+  @supports not (margin-bottom: clamp( 2.8125rem , 2.3992768595rem  +  2.0661157025vw , 4.375rem )) {
     .description-broker__title:not(:last-child) {
       margin-bottom: calc(
-            2.5rem + 0.9375 * (100vw - 20rem) / 75.625
+            2.8125rem + 1.5625 * (100vw - 20rem) / 75.625
          );
     }
   }
 }
 @media (max-width: 20em) {
   .description-broker__title:not(:last-child) {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.8125rem;
   }
 }
 .description-broker__inner {
@@ -11237,15 +11244,11 @@ body.lock {
   }
 }
 .contacts-hero {
-  background-image: url(../img/contacts/bg/contacts-bg-1.png);
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-image: url(../img/contacts/bg/contacts-bg-1.webp);
 }
 @media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
   .contacts-hero {
-    background-image: url("../img/contacts/bg/contacts-bg-1@2x.png");
+    background-image: url("../img/contacts/bg/contacts-bg-1@2x.webp");
   }
 }
 .contacts-hero__container {
@@ -11367,15 +11370,11 @@ body.lock {
 }
 
 .communication {
-  background-image: url(../img/contacts/bg/contacts-bg-2.png);
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-image: url(../img/contacts/bg/contacts-bg-2.webp);
 }
 @media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
   .communication {
-    background-image: url("../img/contacts/bg/contacts-bg-2@2x.png");
+    background-image: url("../img/contacts/bg/contacts-bg-2@2x.webp");
   }
 }
 .communication__items {
@@ -11998,15 +11997,11 @@ body.lock {
 }
 
 .teams {
-  background-image: url(../img/contacts/bg/contacts-bg-3.png);
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-image: url(../img/contacts/bg/contacts-bg-3.webp);
 }
 @media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
   .teams {
-    background-image: url("../img/contacts/bg/contacts-bg-3@2x.png");
+    background-image: url("../img/contacts/bg/contacts-bg-3@2x.webp");
   }
 }
 .teams__container {
@@ -12452,22 +12447,22 @@ body.lock {
   }
 }
 @media (min-width: 20em) and (max-width: 95.625em) {
-  @supports (font-size: clamp( 0.8125rem , 0.7629132231rem  +  0.2479338843vw , 1rem )) {
+  @supports (font-size: clamp( 0.75rem , 0.6838842975rem  +  0.3305785124vw , 1rem )) {
     .slider-teams__link {
-      font-size: clamp( 0.8125rem , 0.7629132231rem  +  0.2479338843vw , 1rem );
+      font-size: clamp( 0.75rem , 0.6838842975rem  +  0.3305785124vw , 1rem );
     }
   }
-  @supports not (font-size: clamp( 0.8125rem , 0.7629132231rem  +  0.2479338843vw , 1rem )) {
+  @supports not (font-size: clamp( 0.75rem , 0.6838842975rem  +  0.3305785124vw , 1rem )) {
     .slider-teams__link {
       font-size: calc(
-            0.8125rem + 0.1875 * (100vw - 20rem) / 75.625
+            0.75rem + 0.25 * (100vw - 20rem) / 75.625
          );
     }
   }
 }
 @media (max-width: 20em) {
   .slider-teams__link {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
   }
 }
 @media (any-hover: hover) {
@@ -12514,12 +12509,12 @@ body.lock {
 
 .hero-error {
   min-height: calc(100vh - 4.375rem);
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(26, 38, 51, 0.4)), to(rgba(26, 38, 51, 0.4))), url(../../img/error/error-bg.png);
-  background-image: linear-gradient(to right, rgba(26, 38, 51, 0.4), rgba(26, 38, 51, 0.4)), url(../../img/error/error-bg.png);
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-image: url(../img/error/error-bg.webp);
+}
+@media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .hero-error {
+    background-image: url("../img/error/error-bg@2x.webp");
+  }
 }
 .hero-error__inner {
   padding-top: 9.375rem;

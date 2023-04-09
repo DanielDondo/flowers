@@ -1,11 +1,14 @@
 .hero-error {
    min-height: calc(100vh - rem(70));
-   background-image: linear-gradient(to right, rgb(26, 38, 51, 0.4), rgb(26, 38, 51, 0.4)),
-      url(../../img/error/error-bg.png);
-   background-attachment: scroll;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
+   background-image: url(../img/error/error-bg.webp);
+   //===============================================================================================================
+   @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url("../img/error/error-bg@2x.webp");
+   }
+   //===============================================================================================================
+   @extend %bg;
    // .hero-error__container
    &__container {
    }

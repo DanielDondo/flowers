@@ -2,18 +2,15 @@
    @extend %padding;
 
    //===============================================================================================================
-   background-image: url(../img/broker/broker-bg.png);
+   background-image: url(../img/broker/broker-bg.webp);
+   //===============================================================================================================
    @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
-      background-image: url("../img/broker/broker-bg@2x.png");
+      background-image: url("../img/broker/broker-bg@2x.webp");
    }
    //===============================================================================================================
-   background-attachment: scroll;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-
+   @extend %bg;
    // .hero-broker__container
    &__container {
       display: flex;

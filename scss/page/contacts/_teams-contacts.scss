@@ -1,17 +1,14 @@
 .teams {
    @extend %padding;
    //===============================================================================================================
-   background-image: url(../img/contacts/bg/contacts-bg-3.png);
+   background-image: url(../img/contacts/bg/contacts-bg-3.webp);
    @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
-      background-image: url("../img/contacts/bg/contacts-bg-3@2x.png");
+      background-image: url("../img/contacts/bg/contacts-bg-3@2x.webp");
    }
    //===============================================================================================================
-   background-attachment: scroll;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
+   @extend %bg;
    // .teams__container
    &__container {
       min-width: 0;
@@ -133,7 +130,7 @@
       @include adaptiveValue("gap", 10, 8);
 
       font-weight: 400;
-      @include adaptiveValue("font-size", 16, 13);
+      @include adaptiveValue("font-size", 16, 12);
       line-height: math.div(24, 16);
       color: $color-tex;
 

@@ -34,6 +34,15 @@
             setTimeout(() => dateInput.style.borderColor = '', 2000);
             dateInput.style.color = 'red';
             setTimeout(() => dateInput.style.color = '', 2000);
+         } else {
+            const [day, month, year] = dateInput.value.split('.');
+            if (month > 12) {
+               dateInput.style.borderBottomColor = 'red';
+               setTimeout(() => dateInput.style.borderColor = '', 2000);
+               dateInput.style.color = 'red';
+               setTimeout(() => dateInput.style.color = '', 2000);
+               isValid = false;
+            }
          }
          return isValid;
       }
@@ -58,8 +67,13 @@
          document.getElementById('announcement').textContent = `${day} ${getMonthName(month - 1)} ${year}`;
       }
       function getMonthName(month) {
-         const months = ['січня', 'лютого', 'березня', 'квітня', 'травня', 'червня', 'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'];
-         return months[month];
+         const lang = document.documentElement.lang.toLowerCase();
+         const months = {
+            'uk': ['січня', 'лютого', 'березня', 'квітня', 'травня', 'червня', 'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'],
+            'en': ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            'pl': ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca', 'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia']
+         };
+         return months[lang][month];
       }
       document.getElementById('finish').addEventListener('click', () => {
          if (validateRadioButtons() && validateDate()) {

@@ -2,10 +2,7 @@
 .tariffs {
    @extend %padding;
    background-image: url(../../../img/home/home__tariffs/tariffs-bg.png);
-   background-attachment: scroll;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
+   @extend %bg;
 
    // .tariffs__container
    &__container {

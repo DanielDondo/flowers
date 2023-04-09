@@ -1,17 +1,14 @@
 .contacts-hero {
    @extend %padding;
    //===============================================================================================================
-   background-image: url(../img/contacts/bg/contacts-bg-1.png);
+   background-image: url(../img/contacts/bg/contacts-bg-1.webp);
    @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
-      background-image: url("../img/contacts/bg/contacts-bg-1@2x.png");
+      background-image: url("../img/contacts/bg/contacts-bg-1@2x.webp");
    }
    //===============================================================================================================
-   background-attachment: scroll;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
+   @extend %bg;
    // .contacts-hero__container
    &__container {
       display: flex;

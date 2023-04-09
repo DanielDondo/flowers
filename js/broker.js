@@ -142,7 +142,7 @@
       } else if (lang === 'pl') {
          greeting.innerText = '3 krok';
       } else {
-         greeting.innerText = '4 крок';
+         greeting.innerText = '3 крок';
       }
       var greeting = document.getElementById('17');
       if (lang === 'en') {

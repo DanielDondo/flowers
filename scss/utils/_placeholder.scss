@@ -10,3 +10,10 @@
    @include adaptiveValue("padding-top", 120, 60);
    @include adaptiveValue("padding-bottom", 120, 60);
 }
+//===============================================================================================================
+%bg {
+   background-attachment: scroll;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+}

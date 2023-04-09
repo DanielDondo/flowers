@@ -3,6 +3,9 @@
    function setLanguage(lang) {
       // Зберігаємо вибір користувача в localStorage
       localStorage.setItem('lang', lang);
+      // Змінюємо мову HTML сторінки відповідно до вибраної мови
+      var html = document.getElementsByTagName('html')[0];
+      html.setAttribute('lang', lang);
       // Змінюємо текст елемента з id='greeting' відповідно до вибраної мови
       //===============================================================================================================
       var greeting = document.getElementById('99');
@@ -816,7 +819,7 @@
    }
    //===============================================================================================================
    // Отримуємо поточну мову з localStorage, якщо вона зберіглася раніше
-   var currentLang = localStorage.getItem('lang') || 'ua';
+   var currentLang = localStorage.getItem('lang') || 'uk';
    // Встановлюємо поточну мову
    setLanguage(currentLang);
    // Додаємо обробник кліку на кожну кнопку
@@ -827,7 +830,7 @@
       setLanguage('pl');
    });
    document.getElementById('ua-btn').addEventListener('click', function () {
-      setLanguage('ua');
+      setLanguage('uk');
    });
 })();
 //===============================================================================================================
@@ -850,3 +853,21 @@ function initTabs(tabsData, activeClass) {
 }
 initTabs("[data-tabsButton]", "active");
 //===============================================================================================================
+function initTab(tabData, activeClass) {
+   const TAB_ITEMS = document.querySelectorAll(tabData);
+   const CLASS = activeClass ? activeClass : "open";
+   TAB_ITEMS.forEach(
+      (x) =>
+      (x.onclick = () => {
+         const TAB = document.querySelector(
+            `[data-tab-Content="${x.dataset.tabbutton}"]`
+         );
+         document.querySelectorAll(`.${CLASS}`).forEach((d) => {
+            d.classList.remove(CLASS);
+         });
+         TAB.classList.add(CLASS);
+         x.classList.add(CLASS);
+      })
+   );
+}
+initTab("[data-tabButton]", "open");

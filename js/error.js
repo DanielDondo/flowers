@@ -3,6 +3,9 @@
    function setLanguage(lang) {
       // Зберігаємо вибір користувача в localStorage
       localStorage.setItem('lang', lang);
+      // Змінюємо мову HTML сторінки відповідно до вибраної мови
+      var html = document.getElementsByTagName('html')[0];
+      html.setAttribute('lang', lang);
       // Змінюємо текст елемента з id='greeting' відповідно до вибраної мови
       var greeting = document.getElementById('1');
       if (lang === 'en') {
@@ -113,7 +116,7 @@
       //===============================================================================================================
    }
    // Отримуємо поточну мову з localStorage, якщо вона зберіглася раніше
-   var currentLang = localStorage.getItem('lang') || 'ua';
+   var currentLang = localStorage.getItem('lang') || 'uk';
    // Встановлюємо поточну мову
    setLanguage(currentLang);
    // Додаємо обробник кліку на кожну кнопку
@@ -124,6 +127,6 @@
       setLanguage('pl');
    });
    document.getElementById('ua-btn').addEventListener('click', function () {
-      setLanguage('ua');
+      setLanguage('uk');
    });
 })();
