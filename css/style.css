@@ -8370,7 +8370,12 @@ body.lock {
 }
 
 .tariffs {
-  background-image: url(../../../img/home/home__tariffs/tariffs-bg.png);
+  background-image: url(../img/home/home__tariffs/tariffs-bg.png);
+}
+@media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .tariffs {
+    background-image: url("../img/home/home__tariffs/tariffs-bg@2x.png");
+  }
 }
 @media (min-width: 95.625em) {
   .tariffs__titles:not(:last-child) {

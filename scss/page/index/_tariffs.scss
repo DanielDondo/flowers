@@ -3,7 +3,12 @@
    @extend %padding;
    background-image: url(../img/home/home__tariffs/tariffs-bg.png);
    @extend %bg;
-
+   //===============================================================================================================
+   @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url("../img/home/home__tariffs/tariffs-bg@2x.png");
+   }
    // .tariffs__container
    &__container {
    }
